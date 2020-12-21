@@ -1,0 +1,9 @@
+{
+    "terms": [
+        {
+            "term": "Resource Hog",
+            "definition": "A computer program that uses up an unreasonable amount of memory.",
+            "img": "rhog.png"
+        }
+    ]
+}

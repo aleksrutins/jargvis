@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "htm": "^3.0.4",
+    "preact": "^10.5.7"
+  },
+  "devDependencies": {
+    "typescript": "^4.1.3"
+  },
+  "name": "jargvis",
+  "version": "1.0.0",
+  "description": "Jargon Visualized",
+  "repository": "https://github.com/munchkinhalfling/jargvis.git",
+  "author": "munchkinhalfling <munchkinhalfling@pm.me>",
+  "license": "GPL-3.0",
+  "private": true
+}
