@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles/app.scss"],"names":[],"mappings":"AAAA,KACI,yCAAA,CACA","file":"app.css","sourceRoot":"..","sourcesContent":["body {\n    font-family: 'Courier New', Courier, monospace;\n    text-align: center;\n}"]}
