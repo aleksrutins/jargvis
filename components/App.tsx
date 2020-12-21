@@ -1,4 +1,4 @@
-import { Component } from 'preact';
+import { h, Component } from 'preact';
 import Term from "../util/Term";
 import TermDisplay from './TermDisplay';
 
@@ -11,7 +11,7 @@ export default class App extends Component<AppProps> {
         return (<div>
             <h1>Jargon Visualized</h1>
             <hr/>
-            {props.terms.map(term => (<TermDisplay term={term}/>))}
+            {props.terms.map(term => [<TermDisplay term={term}/>, <hr/>])}
         </div>)
     }
 }
