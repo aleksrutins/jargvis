@@ -13,6 +13,7 @@ interface AppState {
 
 export default class App extends Component<AppProps, AppState> {
     termsDiv = createRef();
+    aboutDlg = createRef();
     constructor(props: AppProps) {
         super(props);
         this.state = {filteredTerms: props.terms};
@@ -20,19 +21,30 @@ export default class App extends Component<AppProps, AppState> {
     render({ }: AppProps, { filteredTerms }: AppState) {
         return (
         <>
-            <Sidebar onSearch={this.search.bind(this)}/>
+            <Sidebar onSearch={this.search.bind(this)} onAboutClicked={this.aboutClicked.bind(this)}/>
             <div id="main">
                 <div className="header">
                     <h1>Jargon Visualized</h1>
-                    <hr/>
                 </div>
                 <div id="terms" ref={this.termsDiv}>
                     {filteredTerms.map(term => 
-                        <Fragment key={term.term}>
-                            <TermDisplay term={term}/><hr/>
-                        </Fragment>
+                        <TermDisplay term={term}/>
                     )}
                 </div>
+                <dialog className="about-dialog" ref={this.aboutDlg}>
+                    <button className="close-dialog" onClick={() => this.aboutDlg.current.removeAttribute('open')}>&times;</button>
+                    <h1>About</h1>
+                    <p>
+                        Created with:
+                        <ul>
+                            <li>Preact</li>
+                            <li>TypeScript</li>
+                            <li>Gitpod</li>
+                            <li>Material Icons</li>
+                            <li>Parcel</li>
+                        </ul>
+                    </p>
+                </dialog>
             </div>
         </>
         )
@@ -44,5 +56,8 @@ export default class App extends Component<AppProps, AppState> {
         const result = fuse.search(searchText);
         this.setState({ filteredTerms: result.map(fuseTerm => fuseTerm.item) });
         if(searchText.length == 0) this.setState({ filteredTerms: terms });
+    }
+    aboutClicked() {
+        this.aboutDlg.current.setAttribute("open", "");
     }
 }
