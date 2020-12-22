@@ -1,4 +1,63 @@
-body {
+#main {
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+}
+html, body, #app {
+    height: 100vh;
+    width: 100vw;
+    // overflow: hidden;
+    text-align: center;
+    margin: 0;
+    background: rgb(22,90,91);
+    background: linear-gradient(0deg, rgba(22,90,91,1) 0%, rgba(79,79,146,1) 27%, rgba(123,190,167,1) 48%, rgba(86,164,114,1) 75%, rgba(200,140,11,1) 100%);
+    color: white;
+}
+#main {
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    text-align: center;
+}
+.sidebar::backdrop, .sidebar::-ms-backdrop {
+    filter: blur(5px);
+}
+.sidebar {
+    backdrop-filter: blur(5px);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 56px;
+    text-align: center;
+    overflow: hidden;
+    z-index: 11;
+    .sidebar-btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+.sidebar .sidebar-btn {
+    border: none;
+    background-color: transparent;
+    color: white;
+    
+    &:focus, &.toggle-on {
+        border: none;
+        outline: none;
+        background-color: black;
+    }
+}
+.searchbox {
+    position: fixed;
+    top: 0;
+    left: 56px;
+    box-shadow: 10px 5px 3px 4px;
+}
+.header {
+    position: sticky;
+    top: 0;
+    backdrop-filter: blur(5px);
 }
